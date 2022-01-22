@@ -1,6 +1,9 @@
 class draggable {
     constructor(option) {
         this.setupList(option);
+        for (let item of option.elm.children) {
+            this.DnDHandlers(item);
+        }
     }
     setupList(option) {
         let { list, elm: element, template } = option;
@@ -16,5 +19,8 @@ class draggable {
         })
         element.innerHTML = allItem;
 
+    }
+    DnDHandlers(item) {
+        item.setAttribute('draggable', true);
     }
 }
