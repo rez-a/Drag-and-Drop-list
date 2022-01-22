@@ -1,0 +1,87 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.list-item_content {
+    border-left: 3px solid;
+}
+
+.list-item {
+    border-radius: 15px;
+}
+
+.list-item .list-item_content p {
+    color: #4243479c;
+}
+
+.list-item#item-1 {
+    background-image: linear-gradient(to right, rgb(250, 145, 80, 0), rgba(250, 145, 80, 0.3));
+    color: rgb(250, 145, 80);
+}
+
+.list-item#item-1 .list-item_content {
+    border-left-color: rgb(250, 145, 80);
+}
+
+.list-item#item-2 {
+    background-image: linear-gradient(to right, rgb(129, 194, 254, 0), rgba(129, 194, 254, 0.3));
+    color: rgb(129, 194, 254);
+}
+
+.list-item#item-2 .list-item_content {
+    border-left-color: rgb(129, 194, 254);
+}
+
+.list-item#item-3 {
+    background-image: linear-gradient(to right, rgb(122, 85, 211, 0), rgba(122, 85, 211, 0.3));
+    color: rgb(122, 85, 211);
+}
+
+.list-item#item-3 .list-item_content {
+    border-left-color: rgb(122, 85, 211);
+}
+
+.list-item#item-4 {
+    background-image: linear-gradient(to right, rgb(248, 173, 233, 0), rgba(248, 173, 233, 0.3));
+    color: rgb(248, 173, 233);
+}
+
+.list-item#item-4 .list-item_content {
+    border-left-color: rgb(248, 173, 233);
+}
+
+.list-item#item-5 {
+    background-image: linear-gradient(to right, rgb(88, 183, 135, 0), rgba(88, 183, 135, 0.3));
+    color: rgb(88, 183, 135);
+}
+
+.list-item#item-5 .list-item_content {
+    border-left-color: rgb(88, 183, 135);
+}
+
+.list-item#item-6 {
+    background-image: linear-gradient(to right, rgb(250, 219, 103, 0), rgba(250, 219, 103, 0.3));
+    color: rgb(250, 219, 103);
+}
+
+.list-item#item-6 .list-item_content {
+    border-left-color: rgb(250, 219, 103);
+}
+
+.list-item#item-7 {
+    background-image: linear-gradient(to right, rgb(127, 88, 111, 0), rgba(127, 88, 111, 0.3));
+    color: rgb(127, 88, 111);
+}
+
+.list-item#item-7 .list-item_content {
+    border-left-color: rgb(127, 88, 111);
+}
+
+.list-item#item-8 {
+    background-image: linear-gradient(to right, rgb(231, 1, 5, 0), rgba(231, 1, 5, 0.3));
+    color: rgb(231, 1, 5);
+}
+
+.list-item#item-8 .list-item_content {
+    border-left-color: rgb(231, 1, 5);
+}
