@@ -10,6 +10,10 @@ body {
     border-radius: 15px;
 }
 
+.list-item:hover {
+    cursor: move;
+}
+
 .list-item .list-item_content p {
     color: #4243479c;
 }
