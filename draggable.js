@@ -1,4 +1,5 @@
 class draggable {
+    dragElm;
     constructor(option) {
         this.setupList(option);
         for (let item of option.elm.children) {
@@ -22,5 +23,43 @@ class draggable {
     }
     DnDHandlers(item) {
         item.setAttribute('draggable', true);
+
+
+        item.addEventListener('dragstart', (e) => this.handleDragStart(e));
+        item.addEventListener('dragover', (e) => this.handleDragOver(e));
+        item.addEventListener('dragleave', (e) => this.handleDragLeave(e));
+        item.addEventListener('dragend', (e) => this.handleDragEnd(e));
+        item.addEventListener('drop', (e) => this.handleDrop(e));
+    }
+
+    handleDragStart(e) {
+        this.dragElm = e.target;
+        e.dataTransfer.setData('text/html', e.target.outerHTML);
+        e.target.classList.add('drag');
+
+    }
+    handleDragOver(e) {
+        if (e.preventDefault) { e.preventDefault() }
+        if (e.target.classList.contains('list-item') && e.target != this.dragElm) {
+            e.target.classList.add('over')
+        }
+    }
+    handleDragLeave(e) {
+        if (e.target.classList.contains('over')) {
+            e.target.classList.remove('over')
+        }
+    }
+    handleDragEnd(e) {
+        e.target.classList.remove('drag');
+    }
+    handleDrop(e) {
+        if (e.target.classList.contains('over')) {
+            e.target.classList.remove('over')
+            let target = e.target.closest('.list-item');
+            let data = e.dataTransfer.getData('text/html');
+            target.insertAdjacentHTML('beforebegin', data);
+            target.parentNode.removeChild(this.dragElm);
+            this.DnDHandlers(target.previousElementSibling);
+        }
     }
 }

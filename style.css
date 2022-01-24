@@ -10,6 +10,31 @@ body {
     border-radius: 15px;
 }
 
+.list-item.drag {
+    opacity: 0.5;
+}
+
+.list-item.over {
+    position: relative;
+    margin-top: 70px;
+}
+
+.list-item.over:before {
+    content: '+';
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    left: 0;
+    top: -60px;
+    border: 2px dashed rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    border-radius: 15px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
 .list-item:hover {
     cursor: move;
 }
@@ -19,8 +44,12 @@ body {
 }
 
 .list-item#item-1 {
-    background-image: linear-gradient(to right, rgb(250, 145, 80, 0), rgba(250, 145, 80, 0.3));
-    color: rgb(250, 145, 80);
+    background-image: linear-gradient(to right, rgba(250, 145, 80, 0), rgba(250, 145, 80, 0.3));
+    color: rgba(250, 145, 80, 1);
+}
+
+.list-item#item-1.drag {
+    background-image: linear-gradient(to right, rgba(250, 145, 80, 0.3), rgba(250, 145, 80, 0.3));
 }
 
 .list-item#item-1 .list-item_content {
@@ -28,8 +57,12 @@ body {
 }
 
 .list-item#item-2 {
-    background-image: linear-gradient(to right, rgb(129, 194, 254, 0), rgba(129, 194, 254, 0.3));
-    color: rgb(129, 194, 254);
+    background-image: linear-gradient(to right, rgba(129, 194, 254, 0), rgba(129, 194, 254, 0.3));
+    color: rgba(129, 194, 254, 1);
+}
+
+.list-item#item-2.drag {
+    background-image: linear-gradient(to right, rgba(129, 194, 254, 0.3), rgba(129, 194, 254, 0.3));
 }
 
 .list-item#item-2 .list-item_content {
@@ -37,8 +70,12 @@ body {
 }
 
 .list-item#item-3 {
-    background-image: linear-gradient(to right, rgb(122, 85, 211, 0), rgba(122, 85, 211, 0.3));
-    color: rgb(122, 85, 211);
+    background-image: linear-gradient(to right, rgba(122, 85, 211, 0), rgba(122, 85, 211, 0.3));
+    color: rgba(122, 85, 211, 1);
+}
+
+.list-item#item-3.drag {
+    background-image: linear-gradient(to right, rgba(122, 85, 211, 0.3), rgba(122, 85, 211, 0.3));
 }
 
 .list-item#item-3 .list-item_content {
@@ -46,8 +83,12 @@ body {
 }
 
 .list-item#item-4 {
-    background-image: linear-gradient(to right, rgb(248, 173, 233, 0), rgba(248, 173, 233, 0.3));
-    color: rgb(248, 173, 233);
+    background-image: linear-gradient(to right, rgba(248, 173, 233, 0), rgba(248, 173, 233, 0.3));
+    color: rgba(248, 173, 233, 1);
+}
+
+.list-item#item-4.drag {
+    background-image: linear-gradient(to right, rgba(248, 173, 233, 0.3), rgba(248, 173, 233, 0.3));
 }
 
 .list-item#item-4 .list-item_content {
@@ -55,8 +96,12 @@ body {
 }
 
 .list-item#item-5 {
-    background-image: linear-gradient(to right, rgb(88, 183, 135, 0), rgba(88, 183, 135, 0.3));
-    color: rgb(88, 183, 135);
+    background-image: linear-gradient(to right, rgba(88, 183, 135, 0), rgba(88, 183, 135, 0.3));
+    color: rgba(88, 183, 135, 1);
+}
+
+.list-item#item-5.drag {
+    background-image: linear-gradient(to right, rgba(88, 183, 135, 0.3), rgba(88, 183, 135, 0.3));
 }
 
 .list-item#item-5 .list-item_content {
@@ -64,8 +109,12 @@ body {
 }
 
 .list-item#item-6 {
-    background-image: linear-gradient(to right, rgb(250, 219, 103, 0), rgba(250, 219, 103, 0.3));
-    color: rgb(250, 219, 103);
+    background-image: linear-gradient(to right, rgba(250, 219, 103, 0), rgba(250, 219, 103, 0.3));
+    color: rgba(250, 219, 103, 1);
+}
+
+.list-item#item-6.drag {
+    background-image: linear-gradient(to right, rgba(250, 219, 103, 0.3), rgba(250, 219, 103, 0.3));
 }
 
 .list-item#item-6 .list-item_content {
@@ -73,8 +122,12 @@ body {
 }
 
 .list-item#item-7 {
-    background-image: linear-gradient(to right, rgb(127, 88, 111, 0), rgba(127, 88, 111, 0.3));
-    color: rgb(127, 88, 111);
+    background-image: linear-gradient(to right, rgba(127, 88, 111, 0), rgba(127, 88, 111, 0.3));
+    color: rgba(127, 88, 111, 1);
+}
+
+.list-item#item-7.drag {
+    background-image: linear-gradient(to right, rgba(127, 88, 111, 0.3), rgba(127, 88, 111, 0.3));
 }
 
 .list-item#item-7 .list-item_content {
@@ -82,8 +135,12 @@ body {
 }
 
 .list-item#item-8 {
-    background-image: linear-gradient(to right, rgb(231, 1, 5, 0), rgba(231, 1, 5, 0.3));
-    color: rgb(231, 1, 5);
+    background-image: linear-gradient(to right, rgba(231, 1, 5, 0), rgba(231, 1, 5, 0.3));
+    color: rgba(231, 1, 5, 1);
+}
+
+.list-item#item-8.drag {
+    background-image: linear-gradient(to right, rgba(231, 1, 5, 0.3), rgba(231, 1, 5, 0.3));
 }
 
 .list-item#item-8 .list-item_content {
