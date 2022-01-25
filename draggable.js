@@ -1,5 +1,7 @@
 class draggable {
     dragElm;
+    oldList;
+    update;
     constructor(option) {
         this.setupList(option);
         for (let item of option.elm.children) {
@@ -7,13 +9,16 @@ class draggable {
         }
     }
     setupList(option) {
-        let { list, elm: element, template } = option;
+        let { list, elm: element, template, update } = option;
 
         if (!element) throw Error('the list is not exists');
         if (!list) throw Error('the data is not exists');
         if (!Array.isArray(list)) throw Error('the list is not an array, please insert an array');
         if (!template) throw Error('please add a Tempalte function');
+        if (!update) throw Error('please add a update function')
         if (typeof template != 'function') throw Error('please add a function as template');
+        this.oldList = list;
+        this.update = update;
         let allItem = '';
         list.forEach(listItem => {
             allItem += template(listItem);
@@ -60,6 +65,15 @@ class draggable {
             target.insertAdjacentHTML('beforebegin', data);
             target.parentNode.removeChild(this.dragElm);
             this.DnDHandlers(target.previousElementSibling);
+            this.listUpdate(this.oldList);
         }
+    }
+    listUpdate(list) {
+        let data = [];
+        let newList = Array.from(document.querySelector('#list').children);
+        newList.forEach(listItem => {
+            data.push(list.find(item => item.id === Number(listItem.id.split('-')[1])))
+        })
+        this.update(data);
     }
 }

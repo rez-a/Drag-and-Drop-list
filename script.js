@@ -23,5 +23,11 @@ new draggable({
             </div>
         </div>
         `
+    },
+    update: (newList) => {
+        console.clear();
+        for (let item of newList) {
+            console.log(item)
+        }
     }
 })
